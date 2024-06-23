@@ -55,6 +55,10 @@ def ask_a_question(question, instruction):
     else:
         break
 
+
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
 if prompt := st.chat_input("Hello, I'm MasanBot. How can I help you?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
