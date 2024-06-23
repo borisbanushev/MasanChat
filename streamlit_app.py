@@ -55,13 +55,16 @@ def ask_a_question(question, instruction):
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+
 if prompt := st.chat_input("Hello, I'm MasanBot. How can I help you?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     # Display user message in chat message container
-    """with st.chat_message("user"):
-        st.markdown(prompt)"""
-
+    with st.chat_message("user"):
+        st.markdown(prompt)
 
     with st.chat_message("assistant"):
         """stream = client.chat.completions.create(
@@ -74,8 +77,9 @@ if prompt := st.chat_input("Hello, I'm MasanBot. How can I help you?"):
         )"""
         
         #response = st.write_stream(stream)
-        response = ask_a_question(prompt, ins_)
+        response = st.write_stream(ask_a_question(prompt, ins_))
     st.session_state.messages.append({"role": "assistant", "content": response})
+
 
 
 
