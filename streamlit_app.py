@@ -12,7 +12,7 @@ import streamlit as st
 from openai import OpenAI
 
 
-client = OpenAI(api_key='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')
+client = OpenAI(api_key='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')
 thr_id = 'thread_Cb5OIu57GQjBB396UBUI6CaQ'
 file_id = 'file-Yzuy4IQztLLHsJLF3U5qRV45'
 a_id = 'asst_GOeDk5CdRaCCLHe8ljgQTIZU'
