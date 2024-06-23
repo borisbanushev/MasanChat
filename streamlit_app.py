@@ -7,10 +7,10 @@ import streamlit as st
 
 #subprocess.Popen([f'{sys.executable} -m pip install openai'], shell=True)
   # wait for subprocess to install package before running your actual code below
-#time.sleep(90)
+
 
 from openai import OpenAI
-import time
+
 
 client = OpenAI(api_key='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')
 thr_id = 'thread_Cb5OIu57GQjBB396UBUI6CaQ'
@@ -50,7 +50,7 @@ def ask_a_question(question, instruction):
       return resp_
     elif keep_retrieving_run.status in ["queued", "in_progress"]:
         # Delay before the next retrieval attempt
-        time.sleep(1)
+        #time.sleep(1)
         pass
     else:
         break
