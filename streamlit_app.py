@@ -77,7 +77,7 @@ if prompt := st.chat_input("Hello, I'm MasanBot. How can I help you?"):
         )"""
         
         #response = st.write_stream(stream)
-        response = st.write_stream(ask_a_question(prompt, ins_))
+        response = st.write(ask_a_question(prompt, ins_))
     st.session_state.messages.append({"role": "assistant", "content": response})
 
 
