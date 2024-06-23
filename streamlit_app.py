@@ -5,9 +5,9 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-subprocess.Popen([f'{sys.executable} -m pip install openai'], shell=True)
+#subprocess.Popen([f'{sys.executable} -m pip install openai'], shell=True)
   # wait for subprocess to install package before running your actual code below
-time.sleep(90)
+#time.sleep(90)
 
 from openai import OpenAI
 import time
