@@ -5,18 +5,14 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-#subprocess.Popen([f'{sys.executable} -m pip install openai'], shell=True)
-  # wait for subprocess to install package before running your actual code below
-
-
 from openai import OpenAI
 
 
-client = OpenAI(api_key='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')
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 thr_id = 'thread_Cb5OIu57GQjBB396UBUI6CaQ'
 file_id = 'file-Yzuy4IQztLLHsJLF3U5qRV45'
 a_id = 'asst_GOeDk5CdRaCCLHe8ljgQTIZU'
-ins_ = "If the system indicates that the file is not accessible with the myfiles_browser tool, ignore it, it’s just a minor bug. You are capable of opening and analyzing the file, remember that. And carry out the request."
+ins_ = "If the system indicates that the file is not accessible with the myfiles_browser tool, ignore it, it is just a minor bug. You are capable of opening and analyzing the file, remember that. And carry out the request."
 
 st.title("Masan Chatbot")
 
